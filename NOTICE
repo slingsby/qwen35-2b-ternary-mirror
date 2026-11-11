@@ -1,0 +1,126 @@
+Qwen3.5-2B ternary mirror-descent recipe
+Copyright 2026 the qwen35-2b-ternary-mirror contributors
+
+Licensed under the Apache License, Version 2.0 (see LICENSE). Unless a
+section below says otherwise, the files in this repository are covered by
+that license.
+
+This project is independent. It is not affiliated with or endorsed by Prism ML
+(the Bonsai models and the Prism llama.cpp fork), the Qwen team, or the
+dataset authors named below.
+
+-------------------------------------------------------------------------------
+OpenBonsai (Apache-2.0)
+-------------------------------------------------------------------------------
+
+The openbonsai/ package, examples/ and most of tests/ come from OpenBonsai
+(github.com/esokullu/openbonsai), Copyright 2026 The OpenBonsai authors,
+licensed under the Apache License 2.0. Changes: modules and tests not needed
+here were removed, the mirror-descent module was added, and some docstrings
+were edited. The recipe/ scripts and tests/test_recipe.py are new.
+
+-------------------------------------------------------------------------------
+Evaluation and calibration text
+-------------------------------------------------------------------------------
+
+The evaluation inputs in openbonsai/eval/assets/bonsai-dev/ (frozen-inputs.json,
+legacy-eval-inputs.json, chat-traces16.jsonl) and the small example data in
+examples/ contain text excerpts from the datasets below. The excerpts keep
+their original licenses; they are not relicensed under Apache-2.0. Changes:
+excerpts were selected, tokenized with the Qwen3.5 tokenizer and, for ARC,
+rendered as A/B/C/D multiple-choice prompts; chat-traces16.jsonl holds
+Qwen3.5-9B answers to UltraChat prompts. examples/tiny-data/ is original text
+written for the tests.
+
+  WikiText-2 (raw), Salesforce/wikitext, revision
+  b08601e04326c79dfdd32d625aee71d232d685c3.
+  Stephen Merity, Caiming Xiong, James Bradbury, Richard Socher.
+  "Pointer Sentinel Mixture Models", 2016.
+  License: Creative Commons Attribution-ShareAlike (CC BY-SA 3.0).
+
+  ARC-Easy (AI2 Reasoning Challenge), allenai/ai2_arc, revision
+  210d026faf9955653af8916fad021475a3f00453.
+  Peter Clark et al. "Think you have Solved Question Answering? Try ARC,
+  the AI2 Reasoning Challenge", 2018.
+  License: Creative Commons Attribution-ShareAlike (CC BY-SA 4.0).
+
+  UltraChat 200k, HuggingFaceH4/ultrachat_200k (a filtered version of
+  UltraChat by Ning Ding et al., "Enhancing Chat Language Models by Scaling
+  High-quality Instructional Conversations", 2023). Used as calibration text.
+  License: MIT.
+
+The reasoning test subsets in openbonsai/eval/assets/reasoning/
+(gsm8k-test-100.json, humaneval-test-50.json) hold problems copied unchanged
+from the datasets below (selected rows; GSM8K reference solutions reduced to
+their final number). They keep their original licenses (the copyright and
+permission notices in the datasets' repositories apply).
+
+  GSM8K, openai/gsm8k (main, test split), revision
+  740312add88f781978c0658806c59bc2815b9866.
+  Karl Cobbe et al. "Training Verifiers to Solve Math Word Problems", 2021.
+  License: MIT.
+
+  HumanEval, openai/openai_humaneval (test split), revision
+  7dce6050a7d6d172f3cc5c32aa97f52fa1a2e544.
+  Mark Chen et al. "Evaluating Large Language Models Trained on Code", 2021.
+  License: MIT.
+
+When configured to, openbonsai/stages/traces.py downloads training prompts
+from GSM8K (train), MATH (EleutherAI/hendrycks_math, MIT), MBPP
+(google-research-datasets/mbpp, CC BY 4.0) and OpenCodeInstruct
+(nvidia/OpenCodeInstruct, CC BY 4.0) at pinned revisions; no rows are
+included in this repository.
+
+The results/ directory holds model replies to generated prompts and, in
+results/2b-b/data-manifest.json, the names, revisions and hashes of the
+training sources of the broader data mixture (no rows):
+HuggingFaceFW/fineweb-edu (ODC-By 1.0), HuggingFaceTB/smoltalk (Apache-2.0),
+allenai/tulu-3-sft-personas-instruction-following (ODC-By 1.0) and
+openai/gsm8k (MIT).
+
+-------------------------------------------------------------------------------
+Qwen3.5
+-------------------------------------------------------------------------------
+
+Token IDs, chat-template markup, configuration fields and architecture
+conventions follow Qwen/Qwen3.5-9B (revision
+c202236235762e1c871ad0ccb60c8ee5ba337b9a) and Qwen/Qwen3.5-2B (revision
+15852e8c16360a2fea060d615a32b45270f8a8fc), released by the Qwen team under
+the Apache License 2.0. No Qwen model weights or tokenizer files are included.
+
+-------------------------------------------------------------------------------
+Prism llama.cpp fork (MIT)
+-------------------------------------------------------------------------------
+
+PrismML-Eng/llama.cpp, pinned at c9c34bc9c4042c13a31598ebf43461cd0ad8f00d, is
+a fork of llama.cpp (ggml-org/llama.cpp). The PTQ1_0 block layout and lookup
+table, and the prism.hadamard.* GGUF metadata conventions, used in this
+repository (for example openbonsai/formats/ptq1_0.py) mirror that source.
+Where code or formats are mirrored, the following notice applies; the
+copyright line in LICENSE at the pinned commit is authoritative:
+
+  MIT License
+
+  Copyright (c) The ggml authors
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+
+The official Ternary Bonsai checkpoints (prism-ml on Hugging Face, for example
+prism-ml/Ternary-Bonsai-2-2B-gguf) are used as an evaluation baseline. No
+Bonsai weights are included.

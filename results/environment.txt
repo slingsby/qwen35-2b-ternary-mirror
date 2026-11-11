@@ -1,0 +1,3 @@
+name, memory.total [MiB], driver_version
+NVIDIA A100-SXM4-40GB, 40960 MiB, 580.173.02
+torch 2.15.0+cu132 cuda 13.2 transformers 5.20.2

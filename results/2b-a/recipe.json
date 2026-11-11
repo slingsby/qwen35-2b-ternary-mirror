@@ -1,0 +1,37 @@
+{
+ "version": "push-1",
+ "seed": 42,
+ "fill_seed": 842,
+ "steps": 1000,
+ "targets_per_update": 2044,
+ "validate_every": 100,
+ "patience": 3,
+ "potential": "PruneQuantize eps=.05 q=8 beta=1 kink=mid (patent Eq. 23), two-step SMD, dual = trainable tensor",
+ "code_update": "Adafactor(beta1=None, decay_rate=-.8, no parameter scaling) direction on the dual",
+ "code_lr": 0.02,
+ "code_schedule": "warmup 32, cosine from peak to 0 over the run length",
+ "scale_lr": 0.001,
+ "vector_lr": 0.0001,
+ "matrix_lr": 2e-05,
+ "small_schedule": "warmup 32, cosine to 0.1x over horizon 2000",
+ "endpoint_codes": "frozen",
+ "loss": "full-vocab masked KL(teacher||student), T1, online BF16 teacher",
+ "hidden_mse_lambda": 0.0,
+ "smoke": false,
+ "inputs_sha256": {
+  "initial": "32b338a2cea0ed6291398270dee4b9c8025555816731d58849519c4a998644da",
+  "train_ids": "fe4d3e0bebdc5aff0142542efdb21d91b6591af02cd53417ad80cd2e130eda44",
+  "train_mask": "baea415cffe80442dc5bd7b3d9028eadabc3bbcf4ffa15171737f7b58db6b493",
+  "val_doc": "d6cec04bb62bd3ffc8af29e00b0e8d2c0e1afd01c1f81f76cff57412b0b4f76f",
+  "val_chat_ids": "a4acc3b6ed330c524e4eccca37a36607c951388000accbb701a0ea64dea33f18",
+  "val_chat_mask": "3fc40053eccaddb6d4e8bbac9c690b06f0269717e643f0e57c7270319e983d05",
+  "model_config": "ed1c1723241f23f7f4e23430759cbd7dcfb4103cbdfe052bfe7626b57c2615b4"
+ },
+ "source_sha256": {
+  "scripts/push_train.py": "e3c5d20ec94d76879b58f14e3187d3f47d064327576a13c74cc87f8c4fa95870",
+  "openbonsai/core/mirror.py": "86a001a94ab7dcfb0d1641516f4627ef92db8400e3a4b45992ac429ba4f2d863",
+  "openbonsai/core/method_compare.py": "95b7743382237c33403782b50cfefbe9a1de8edc31991b4ac70a90630191e8cf",
+  "openbonsai/core/data_recovery.py": "a8e8aadcb0d5c07a8fbc13cf1fe7483a9c199f7823ae0736a47eb7462bb6782c",
+  "openbonsai/core/hidden_distill.py": "9da7d8fc6ace06873da526e3247ce67858f168e2d7a35f295203aafd3301d489"
+ }
+}

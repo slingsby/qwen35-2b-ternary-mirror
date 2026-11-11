@@ -1,0 +1,65 @@
+# Tiny random dense models (Llama, Qwen3 tied, Qwen2) on CPU in well under a minute (tests/test_dense.py).
+# Make a model with tests/tiny_models.py:save_tiny_dense(dir, "llama") (or "qwen3", tied=True), then:
+#   openbonsai run --model <dir> --config examples/tiny-dense.yaml --out runs/tiny-llama
+# endpoints auto: ternary head and embedding for an untied model; a tied table stays high precision.
+# export auto: a PTQ1_0 GGUF where Prism can load the architecture (llama, qwen3), else a latent checkpoint.
+# Relative data paths resolve against the current directory (the repo root).
+model:
+  dtype: bfloat16
+  device: cpu
+  attn: sdpa
+rotation:
+  group: 128
+  max_block: 4096
+  signs: {mode: seeded, seed: width}
+  impl: dense
+traces:
+  prompts: {kind: jsonl, path: examples/prompts.jsonl}
+  max_new_tokens: 24
+  thinking: false
+  batch: 2
+calibrate:
+  seq_len: 64
+  seed: 0
+  sources:
+    - {kind: jsonl, path: examples/tiny-data/text.jsonl, n: 4}
+    - {kind: jsonl, path: examples/tiny-data/chat.jsonl, n: 2}
+    - {kind: traces, n: 2}
+quantize:
+  damp: 0.01
+  batch: 4
+endpoints:
+  head: auto
+  embedding: auto
+  chunk: 128
+  batch: 4
+distill:
+  teacher:
+    n_seq: 4
+    seq_len: 64
+    seed: 1
+    shard: 2
+    topk: 16
+    sources:
+      - {kind: jsonl, path: examples/tiny-data/text.jsonl, n: 3, seed: 1}
+      - {kind: traces, n: 1}
+  lr: 0.01
+  epochs: 1
+  accum: 2
+  warmup: 1
+  chunk: 32
+  log_every: 1
+  ckpt_every: 1
+export:
+  format: auto
+eval:
+  from: auto
+  suites: [compare, teacher]
+  generations: false
+  compare:
+    seq_len: 64
+    n: 2
+    seed: 7
+    topk: 16
+    sources:
+      - {kind: jsonl, path: examples/tiny-data/heldout.jsonl, n: 2}

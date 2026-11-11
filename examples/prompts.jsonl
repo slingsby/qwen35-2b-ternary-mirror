@@ -1,0 +1,2 @@
+{"prompt":"Compute the greatest common divisor of 84 and 30, then add 4. Explain your reasoning."}
+{"prompt":"Write a Python function that returns the longest strictly increasing subsequence length in O(n log n) time. Explain why the algorithm works."}

@@ -1,0 +1,78 @@
+# Qwen3.5-9B -> ternary, the settings of the decoder run that measured dev NLL 3.30
+# (ARC 13/20; BF16 2.42, official Ternary Bonsai 3.19): 256 x 2048 calibration
+# blocks (128 WikiText-2 train, 96 UltraChat, 32 own traces), damp 0.01,
+# group 128, block 4096, no scale refit. That run used per-module signs; this
+# config uses one shared sign vector per width, which Prism's PTQ1_0 needs. The
+# shared-sign GPTQ run measured dev NLL 3.3183, ARC 15/20; its 32 trace blocks
+# came from the original ayot128.jsonl (not in the repository), so to reproduce it exactly point the
+# traces source at that file: --set calibrate.sources.2.path=<dir>/ayot128.jsonl
+#
+#   openbonsai run --config examples/qwen3_5-9b.yaml --out runs/qwen3_5-9b
+#
+# For your own fine-tune, pass --model <dir or HF id>: it becomes the teacher,
+# writes its own traces with its own chat template, and is the BF16 reference.
+model:
+  path: Qwen/Qwen3.5-9B
+  revision: c202236235762e1c871ad0ccb60c8ee5ba337b9a
+  dtype: bfloat16
+  device: auto
+  attn: sdpa
+rotation:
+  group: 128
+  max_block: 4096          # derived block for 9B (widths 4096, 12288): 4096
+  signs: {mode: seeded, seed: width}
+  impl: dense              # the experiments' arithmetic; fwht avoids the dense R
+traces:
+  # First-turn UltraChat prompts from rows 5,000 to 5,999, below the calibration rows,
+  # answered greedily without thinking (the AYOT settings of the 3.30 run). That run's
+  # 128 traces held 66,904 tokens against the 65,536 the 32 blocks below need (2%
+  # spare); 160 prompts leave room. Rows below 5,000 hold the 16 prompts behind the
+  # extended suite's chat NLL; traces and calibration that contain one are refused
+  # (docs/evaluation.md).
+  prompts: {kind: ultrachat, rows: [5000, 6000], n: 160, seed: 5090}
+  max_new_tokens: 512
+  thinking: false
+  batch: 8
+calibrate:
+  seq_len: 2048
+  seed: 0
+  sources:
+    - {kind: wikitext2, n: 128}               # Salesforce/wikitext @ b08601e, train split
+    - {kind: ultrachat, n: 96, min_row: 6000}  # HuggingFaceH4/ultrachat_200k @ 8049631, train_sft shard 0
+    - {kind: traces, n: 32}                    # traces/traces.jsonl from the traces stage
+    # - {kind: jsonl, path: my-data.jsonl, n: 32}   # your own chat/text data
+    # n counts blocks of seq_len tokens (n: 32 needs about 65K tokens), and the total n of
+    # these sources must be a multiple of quantize.batch (4); quantize refuses it otherwise.
+quantize:
+  damp: 0.01
+  batch: 4
+endpoints:
+  # The head Hessian uses all 256 calibration blocks above; the measured
+  # endpoints.py runs built their own 128 (64 WikiText-2, 48 chat, 16 traces).
+  head: ternary            # GPTQ with the final-hidden-state Hessian
+  embedding: ternary       # GPTQ weighted by layer 0's (1 + w) norm gain
+  damp: 0.01
+  chunk: 16384
+  batch: 4
+distill:
+  teacher: {n_seq: 2048, seq_len: 2048, seed: 1, shard: 64, topk: 64}
+  train: {scales: true, small: false}   # small: also norms, conv1d, in_proj_a/b, A_log, dt_bias (e2e_kd.py --train-small)
+  lr: 1.0e-3               # every measured run (stage3-5 scripts: e2e_kd.py --lr 1e-3)
+  lr_small: 1.0e-4         # used with small: true (vector-like tensors)
+  lr_small_mat: 2.0e-5     # used with small: true (conv1d, in_proj_a/b)
+  epochs: 1
+  accum: 8
+  warmup: 10
+  chunk: 512
+  log_every: 5
+  ckpt_every: 16
+export:
+  format: ptq1_0-gguf      # ~2 GB for 9B; same layout as Ternary-Bonsai-2-9B-PTQ1_0.gguf
+  verify: true
+eval:
+  from: auto
+  suites: [dev, extended, compare]   # compare also scores fine-tunes with another tokenizer
+  # Reasoning: --suite gsm8k,humaneval (100 GSM8K, 50 HumanEval TEST problems; greedy chat generation).
+  # Thinking off takes minutes on one GPU; on (4096-token cap) roughly 30-60 min. See docs/evaluation.md.
+  reasoning: {thinking: ["off"], max_new_tokens: 512, max_new_tokens_thinking: 4096, batch: 16}
+  generations: true

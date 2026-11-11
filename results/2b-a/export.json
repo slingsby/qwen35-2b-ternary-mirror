@@ -1,0 +1,85 @@
+{
+ "bytes": 429183488,
+ "sha256": "08d0026a066438bfc270a25706f4cdf556ba710d40fba927a1b0bf5eba605553",
+ "state_sha256": "1699a2828b3a6434161209b2dc5d16a6d21401b1c3d37c1986d43ff45b71d38e",
+ "small_sha256": "87dfb12b426a25fdc90a0c392dec9da859231af6bb761a981cd01dd00044436d",
+ "codes_changed_vs_initial": 3786957,
+ "report": {
+  "output": "runs/push2b/2b-a/trained.gguf",
+  "name": "Qwen3.5-2B-ternary-mirror-2b-a",
+  "notes": [
+   "distilled high-precision tensors: 169 of 169 F32 tensors",
+   "Hadamard block 512: Prism's runtime accepts any power-of-two block, but it has run real models only at block 4096 (and tiny random models at 128 in our tests); block 512 is untested on real weights, so check the exported model in Prism"
+  ],
+  "reference": false,
+  "write": {
+   "header_end": 10999031,
+   "data_start": 10999040,
+   "file_size": 429183488,
+   "seconds": 6.117135286331177,
+   "ternary_weights": 1880096768,
+   "neg_scale_groups": 0,
+   "zero_scale_groups": 224,
+   "zero_scale_codes_cleared": 224,
+   "distilled_f32": 169
+  },
+  "verify": [
+   {
+    "ok": true,
+    "check": "GGUF v3, alignment 32",
+    "detail": "3, 32"
+   },
+   {
+    "ok": true,
+    "check": "tensor names, order, types, ne and offsets as planned",
+    "detail": "320 tensors"
+   },
+   {
+    "ok": true,
+    "check": "file size = data start + tensor data",
+    "detail": "429183488 vs 429183488"
+   },
+   {
+    "ok": true,
+    "check": "KVs read back equal the KVs written",
+    "detail": "50 KVs"
+   },
+   {
+    "ok": true,
+    "check": "weight_names + inverse_weight_names cover each PTQ1_0 tensor once",
+    "detail": "150 + 1 of 151"
+   },
+   {
+    "ok": true,
+    "check": "sign table covers every PTQ1_0 input width",
+    "detail": "widths [2048, 6144]"
+   },
+   {
+    "ok": true,
+    "check": "general.file_type = 143 (LLAMA_FTYPE_MOSTLY_PTQ1_0)",
+    "detail": ""
+   },
+   {
+    "ok": true,
+    "check": "layout permutations and F32 transforms == the adapter's independent rule",
+    "detail": "320 tensors"
+   },
+   {
+    "ok": true,
+    "check": "decoded PTQ1_0 codes and fp16 scale bits == permuted, canonical state (exact)",
+    "detail": "1,880,096,768 weights in 18s, rows by the adapter's independent row and transform rule"
+   },
+   {
+    "ok": true,
+    "check": "float tensors (F32, and BF16/F16 tables) bit-identical to the transformed sources",
+    "detail": "169 tensors, rows and transforms by the adapter's independent row and transform rule"
+   },
+   {
+    "ok": true,
+    "check": "function check (FP64, runtime transform vs fake-quant source rows)",
+    "detail": "21 tensors in layers [0, 3, 23] + endpoints, worst rel 1.41e-15"
+   }
+  ],
+  "seconds": 25.597339868545532
+ }
+}

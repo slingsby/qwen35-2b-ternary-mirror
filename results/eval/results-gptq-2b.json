@@ -1,0 +1,866 @@
+{
+ "label": "gptq-2b",
+ "candidate": "gptq:runs/qwen2b-fulltraining/initial.safetensors",
+ "metrics": {
+  "sealed-doc-wiki": {
+   "targets": 239148,
+   "nll": 4.547302940734557,
+   "perplexity": 94.37752297620506,
+   "full_vocab_kl": 1.7691546604686548,
+   "teacher_top1_agreement": 0.43235987756535704
+  },
+  "sealed-doc-python": {
+   "targets": 32704,
+   "nll": 2.504652486789658,
+   "perplexity": 12.239304906532519,
+   "full_vocab_kl": 1.2884472993101357,
+   "teacher_top1_agreement": 0.6230736301369864
+  },
+  "sealed-chat": {
+   "targets": 4604,
+   "nll": 2.2080826797659348,
+   "perplexity": 9.09825539006814,
+   "full_vocab_kl": 2.032583961154874,
+   "teacher_top1_agreement": 0.5549522154648132
+  },
+  "legacy-test": {
+   "targets": 6120,
+   "nll": 3.9551176251928792,
+   "perplexity": 52.201833834095126,
+   "full_vocab_kl": 1.6875534792205478,
+   "teacher_top1_agreement": 0.45326797385620915
+  }
+ },
+ "generation": [
+  {
+   "id": "code_12_sealed_0",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\nThe\n\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 170,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_0",
+   "domain": "debug",
+   "text": "The definition to meet this behavior: Count how many of the integers are even.\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n",
+   "tokens": 135,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_0",
+   "domain": "tool",
+   "text": "The available tool is cancel_booking, with argument types \"booking_id\" and \"arguments\" are \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\" and \"arguments\" are \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\" and \"arguments\" are \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\" and \"arguments\" are \"string\"\n\nThe available tool is",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_0",
+   "domain": "instruction",
+   "text": "The word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_0",
+   "domain": "reasoning",
+   "text": "The answer is a number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+   "tokens": 100,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_0",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_0",
+   "domain": "debug",
+   "text": "The definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "tool_13_sealed_0",
+   "domain": "tool",
+   "text": "The available tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_0",
+   "domain": "instruction",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_0",
+   "domain": "reasoning",
+   "text": "The 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "tokens": 99,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_1",
+   "domain": "code",
+   "text": "The\nThe\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\nThe\n\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 156,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_1",
+   "domain": "debug",
+   "text": "The definition to meet this behavior: Count how many of the integers are even.\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n",
+   "tokens": 133,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_1",
+   "domain": "tool",
+   "text": "The available tool is cancel_booking, with argument types \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and",
+   "tokens": 106,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_1",
+   "domain": "instruction",
+   "text": "The word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\nThe word orbit is a word.\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_1",
+   "domain": "reasoning",
+   "text": "The answer is a number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+   "tokens": 100,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_1",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_1",
+   "domain": "debug",
+   "text": "The definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "tool_13_sealed_1",
+   "domain": "tool",
+   "text": "The available tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_1",
+   "domain": "instruction",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_1",
+   "domain": "reasoning",
+   "text": "The 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "tokens": 99,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_2",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_2",
+   "domain": "debug",
+   "text": "The definition to meet this behavior: Count how many of the integers are even.\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n",
+   "tokens": 135,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_2",
+   "domain": "tool",
+   "text": "The available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_2",
+   "domain": "instruction",
+   "text": "The word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the word maple is a word, but the",
+   "tokens": 97,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_2",
+   "domain": "reasoning",
+   "text": "The answer is a number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+   "tokens": 100,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_2",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_2",
+   "domain": "debug",
+   "text": "The definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "tool_13_sealed_2",
+   "domain": "tool",
+   "text": "The available tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_2",
+   "domain": "instruction",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_2",
+   "domain": "reasoning",
+   "text": "The 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "tokens": 99,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_3",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\nThe\n\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 176,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_3",
+   "domain": "debug",
+   "text": "The definition to meet this behavior: Count how many of the integers are even.\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n",
+   "tokens": 133,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_3",
+   "domain": "tool",
+   "text": "The available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_3",
+   "domain": "instruction",
+   "text": "The word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_3",
+   "domain": "reasoning",
+   "text": "The answer is a number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+   "tokens": 100,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_3",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_3",
+   "domain": "debug",
+   "text": "The definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "tool_13_sealed_3",
+   "domain": "tool",
+   "text": "The available tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_3",
+   "domain": "instruction",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_3",
+   "domain": "reasoning",
+   "text": "The 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "tokens": 99,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_4",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\nThe\n\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 168,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_4",
+   "domain": "debug",
+   "text": "The definition to meet this behavior: Count how many of the integers are even.\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n",
+   "tokens": 133,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_4",
+   "domain": "tool",
+   "text": "The available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_4",
+   "domain": "instruction",
+   "text": "The word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\nThe word is not a word.\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_4",
+   "domain": "reasoning",
+   "text": "The answer is a number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+   "tokens": 100,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_4",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_4",
+   "domain": "debug",
+   "text": "The definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "tool_13_sealed_4",
+   "domain": "tool",
+   "text": "The available tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_4",
+   "domain": "instruction",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_4",
+   "domain": "reasoning",
+   "text": "The 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "tokens": 99,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_5",
+   "domain": "code",
+   "text": "The\nThe\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\nThe\n\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 158,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_5",
+   "domain": "debug",
+   "text": "The definition to meet this behavior: Count how many of the integers are even.\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n",
+   "tokens": 133,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_5",
+   "domain": "tool",
+   "text": "The available tool is cancel_booking, with argument types \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and \"arguments\"\nThe argument is a \"booking_id\" and",
+   "tokens": 106,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_5",
+   "domain": "instruction",
+   "text": "The word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the",
+   "tokens": 97,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_5",
+   "domain": "reasoning",
+   "text": "The answer is a number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the",
+   "tokens": 100,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_5",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_5",
+   "domain": "debug",
+   "text": "The definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "tool_13_sealed_5",
+   "domain": "tool",
+   "text": "The available tool is query_tide, with argument types \"port\" and \"days_ahead\"\n. The argument types are \"port\" and \"days_ahead\"\n. The argument types are \"port\" and \"days_ahead\"\n. The argument types are \"port\" and \"days_ahead\"\n. The argument types are \"port\" and \"days_ahead\"\n. The argument types are \"port\" and \"days_ahead\"\n. The argument types are \"port\" and \"days",
+   "tokens": 107,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_5",
+   "domain": "instruction",
+   "text": "The\nThe\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\nThe\n\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 184,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_5",
+   "domain": "reasoning",
+   "text": "The 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "tokens": 99,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_6",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\nThe\n\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 168,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_6",
+   "domain": "debug",
+   "text": "The definition to meet this behavior: Count how many of the integers are even.\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n",
+   "tokens": 133,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_6",
+   "domain": "tool",
+   "text": "The available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_6",
+   "domain": "instruction",
+   "text": "The word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the word of the",
+   "tokens": 97,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_6",
+   "domain": "reasoning",
+   "text": "The answer of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_6",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_6",
+   "domain": "debug",
+   "text": "The definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "tool_13_sealed_6",
+   "domain": "tool",
+   "text": "The available tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_6",
+   "domain": "instruction",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_6",
+   "domain": "reasoning",
+   "text": "The 45000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "tokens": 100,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_7",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\n\nThe\nThe\n\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 166,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_7",
+   "domain": "debug",
+   "text": "The definition to meet this behavior: Count how many of the integers are even.\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n```\n",
+   "tokens": 135,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_7",
+   "domain": "tool",
+   "text": "The available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking, with argument types \"booking_id\": \"string\"\n\nThe available tool is cancel_booking",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_7",
+   "domain": "instruction",
+   "text": "The word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\nThe word coral is a word.\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_7",
+   "domain": "reasoning",
+   "text": "The answer of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number of the number",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_7",
+   "domain": "code",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_7",
+   "domain": "debug",
+   "text": "The definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\nThe definition to meet this behavior:\n\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "tool_13_sealed_7",
+   "domain": "tool",
+   "text": "The available tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days_ahead\": \"integer\".\nThe tool is query_tide, with argument types \"port\": \"string\" and \"days",
+   "tokens": 98,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_7",
+   "domain": "instruction",
+   "text": "The\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\nThe\n",
+   "tokens": 96,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_7",
+   "domain": "reasoning",
+   "text": "The 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+   "tokens": 99,
+   "ended_at_eos": false,
+   "repetition_failure_stop": true,
+   "declared_check_pass": false,
+   "check_reason": "arithmetic final-value check"
+  }
+ ],
+ "generation_summary": {
+  "declared_pass": 0,
+  "n": 80,
+  "eos": 0,
+  "loops": 80,
+  "by_domain": {
+   "code": {
+    "pass": 0,
+    "n": 16
+   },
+   "debug": {
+    "pass": 0,
+    "n": 16
+   },
+   "tool": {
+    "pass": 0,
+    "n": 16
+   },
+   "instruction": {
+    "pass": 0,
+    "n": 16
+   },
+   "reasoning": {
+    "pass": 0,
+    "n": 16
+   }
+  }
+ },
+ "seconds": 849.8907538179774,
+ "gpu_peak_allocated": 8190180864
+}

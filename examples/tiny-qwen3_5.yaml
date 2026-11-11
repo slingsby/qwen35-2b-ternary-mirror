@@ -1,0 +1,61 @@
+# Tiny random Qwen3.5 on CPU in well under a minute (tests/test_cli.py).
+# Make the model with tests/tiny_models.py:save_tiny_qwen3_5(dir), then:
+#   openbonsai run --model <dir> --config examples/tiny-qwen3_5.yaml --out runs/tiny
+# Relative data paths resolve against the current directory (the repo root).
+model:
+  dtype: bfloat16
+  device: cpu
+  attn: sdpa
+rotation:
+  group: 128
+  max_block: 4096
+  signs: {mode: seeded, seed: width}
+  impl: dense
+traces:
+  prompts: {kind: jsonl, path: examples/prompts.jsonl}
+  max_new_tokens: 24
+  thinking: false
+  batch: 2
+calibrate:
+  seq_len: 64
+  seed: 0
+  sources:
+    - {kind: jsonl, path: examples/tiny-data/text.jsonl, n: 4}
+    - {kind: jsonl, path: examples/tiny-data/chat.jsonl, n: 2}
+    - {kind: traces, n: 2}
+quantize:
+  damp: 0.01
+  batch: 4
+endpoints:
+  head: ternary
+  embedding: ternary
+  chunk: 128
+  batch: 4
+distill:
+  teacher:
+    n_seq: 4
+    seq_len: 64
+    seed: 1
+    shard: 2
+    topk: 16
+    sources:
+      - {kind: jsonl, path: examples/tiny-data/text.jsonl, n: 3, seed: 1}
+      - {kind: traces, n: 1}
+  lr: 0.01
+  epochs: 1
+  accum: 2
+  warmup: 1
+  chunk: 32
+  log_every: 1
+  ckpt_every: 1
+eval:
+  from: auto
+  suites: [compare]
+  generations: false
+  compare:
+    seq_len: 64
+    n: 2
+    seed: 7
+    topk: 16
+    sources:
+      - {kind: jsonl, path: examples/tiny-data/heldout.jsonl, n: 2}

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qwen35-2b-ternary-mirror"
+version = "0.1.0"
+description = "Research: ternary (PTQ1_0) Qwen3.5-2B via GPTQ and mirror-descent code training"
+requires-python = ">=3.12"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+dependencies = ["torch>=2.6,<3", "transformers>=5.20.2,<5.21", "accelerate>=1.15,<2", "safetensors>=0.8,<1",
+                "numpy>=2", "pyarrow>=17", "pyyaml>=6", "huggingface_hub>=1"]
+
+[project.optional-dependencies]
+test = ["pytest>=9,<10"]
+
+[project.scripts]
+openbonsai = "openbonsai.cli:main"
+
+[project.urls]
+Repository = "https://github.com/slingsby/qwen35-2b-ternary-mirror"
+
+[tool.setuptools.packages.find]
+include = ["openbonsai*"]
+
+[tool.setuptools.package-data]
+"openbonsai.eval" = ["assets/bonsai-dev/*.json", "assets/bonsai-dev/*.jsonl", "assets/bonsai-dev/*.md",
+                     "assets/reasoning/*.json", "assets/reasoning/*.md"]
+"openbonsai.formats" = ["assets/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["runs", ".*", "build", "dist", "*.egg-info"]
+markers = ["slow: needs local 9B data and minutes of CPU; runs only with OPENBONSAI_SLOW=1"]

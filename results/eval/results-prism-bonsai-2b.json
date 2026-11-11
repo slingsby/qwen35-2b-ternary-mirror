@@ -1,0 +1,866 @@
+{
+ "label": "prism-bonsai-2b",
+ "candidate": "gguf:runs/prism2b/Ternary-Bonsai-2-2B-PTQ1_0.gguf",
+ "metrics": {
+  "sealed-doc-wiki": {
+   "targets": 239148,
+   "nll": 3.3553407871210443,
+   "perplexity": 28.655367907269277,
+   "full_vocab_kl": 0.527044969493588,
+   "teacher_top1_agreement": 0.6506013012862328
+  },
+  "sealed-doc-python": {
+   "targets": 32704,
+   "nll": 1.5488491948432739,
+   "perplexity": 4.706051317036107,
+   "full_vocab_kl": 0.3209623265486586,
+   "teacher_top1_agreement": 0.8197468199608611
+  },
+  "sealed-chat": {
+   "targets": 4604,
+   "nll": 0.45154677154746137,
+   "perplexity": 1.5707398832190858,
+   "full_vocab_kl": 0.2289658265562969,
+   "teacher_top1_agreement": 0.9200695047784535
+  },
+  "legacy-test": {
+   "targets": 6120,
+   "nll": 2.8358941160775477,
+   "perplexity": 17.045634264563102,
+   "full_vocab_kl": 0.516125196076053,
+   "teacher_top1_agreement": 0.6862745098039216
+  }
+ },
+ "generation": [
+  {
+   "id": "code_12_sealed_0",
+   "domain": "code",
+   "text": "```python\ndef code_12_sealed_0(left, right):\n    # Initialize pointers to the start of both lists\n    left_idx = 0\n    right_idx = 0\n    \n    # Initialize a list to store the result\n    result = []\n    \n    # Alternate items from left, then append whatever remains of the longer list\n    while left_idx < len(left) or right_idx < len(right):\n        if left_idx < len(left):\n            result.append(left[left_idx])\n            left_idx += 1\n        elif right_idx < len(right):\n            result.append(right[right_idx])\n            right_idx += 1\n        else:\n            # If both lists are exhausted, append the remaining items from the longer list\n            if len(left) >= len(right):\n                result.extend(left[left_idx:])\n            else:\n                result.extend(right[right_idx:])\n    \n    return result\n```",
+   "tokens": 196,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_0",
+   "domain": "debug",
+   "text": "```python\ndef debug_12_sealed_0(numbers):\n    return sum(1 for n in numbers if n % 2 == 0)\n```",
+   "tokens": 36,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_0",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-cedar-2\"\n  }\n}\n</think>\n\n{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-cedar-2\"\n  }\n}",
+   "tokens": 72,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_0",
+   "domain": "instruction",
+   "text": "CEDAR",
+   "tokens": 4,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_0",
+   "domain": "reasoning",
+   "text": "To find the remaining amount, we first calculate the total amount drained:\n5 litres/hour $\\times$ 5 hours = 25 litres.\n\nThen, subtract this from the initial amount:\n27 litres - 25 litres = 2 litres.\n\nAnswer: 2",
+   "tokens": 61,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_0",
+   "domain": "code",
+   "text": "```python\ndef code_13_sealed_0(text):\n    if len(text) <= 6:\n        return 'c' + text\n    else:\n        return text\n```",
+   "tokens": 43,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_0",
+   "domain": "debug",
+   "text": "```python\ndef debug_13_sealed_0(text):\n    return text.strip()\n```",
+   "tokens": 23,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_13_sealed_0",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"cedar\",\n    \"days_ahead\": 2\n  }\n}\n</think>\n\n{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"cedar\",\n    \"days_ahead\": 2\n  }\n}",
+   "tokens": 84,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_0",
+   "domain": "instruction",
+   "text": "cedar cedar cedar",
+   "tokens": 5,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_0",
+   "domain": "reasoning",
+   "text": "To find the number of crates needed, we divide the total number of jars by the number of jars per crate:\n$26 \\text{ jars} \\div 5 \\text{ jars/crate} = 5.2$\n\nSince we cannot have a fraction of a crate, we must round up to the next whole number.\n$6$ crates are needed.\n\nAnswer: 6",
+   "tokens": 84,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_1",
+   "domain": "code",
+   "text": "```python\ndef code_12_sealed_1(left, right):\n    # Initialize pointers to the start of both lists\n    left_idx = 0\n    right_idx = 0\n    \n    # Initialize a list to store the result\n    result = []\n    \n    # Alternate items from left, then append whatever remains of the longer list\n    while left_idx < len(left) or right_idx < len(right):\n        if left_idx < len(left):\n            result.append(left[left_idx])\n            left_idx += 1\n        elif right_idx < len(right):\n            result.append(right[right_idx])\n            right_idx += 1\n        else:\n            # If both lists are exhausted, append the remaining items from the longer list\n            if len(left) >= len(right):\n                result.extend(left[left_idx:])\n            else:\n                result.extend(right[right_idx:])\n    \n    return result\n```",
+   "tokens": 196,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_1",
+   "domain": "debug",
+   "text": "```python\ndef debug_12_sealed_1(numbers):\n    return sum(1 for n in numbers if n % 2 == 0)\n```",
+   "tokens": 36,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_1",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-orbit-3\"\n  }\n}\n</think>\n\n{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-orbit-3\"\n  }\n}",
+   "tokens": 72,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_1",
+   "domain": "instruction",
+   "text": "ORBIT",
+   "tokens": 3,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_1",
+   "domain": "reasoning",
+   "text": "To find the remaining amount, we first calculate the total amount drained:\n$6 \\text{ litres/hour} \\times 6 \\text{ hours} = 36 \\text{ litres}$.\n\nThen, subtract the drained amount from the initial amount:\n$39 \\text{ litres} - 36 \\text{ litres} = 3 \\text{ litres}$.\n\nAnswer: 3",
+   "tokens": 88,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_1",
+   "domain": "code",
+   "text": "```python\ndef code_13_sealed_1(text):\n    if len(text) <= 7:\n        return 'o' + text\n    else:\n        return text\n```",
+   "tokens": 43,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_1",
+   "domain": "debug",
+   "text": "```python\ndef debug_13_sealed_1(text):\n    return text.strip()\n```",
+   "tokens": 23,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_13_sealed_1",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"orbit\",\n    \"days_ahead\": 3\n  }\n}\n</think>\n\n{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"orbit\",\n    \"days_ahead\": 3\n  }\n}",
+   "tokens": 82,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_1",
+   "domain": "instruction",
+   "text": "```\norbit orbit orbit\n```",
+   "tokens": 8,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_1",
+   "domain": "reasoning",
+   "text": "To find the number of crates needed, we divide the total number of jars by the number of jars per crate:\n$37 \\text{ jars} \\div 6 \\text{ jars/crate} = 6.166...$\n\nSince we cannot have a fraction of a crate, we must round up to the next whole number.\n$7$ crates are needed.\n\nAnswer: 7",
+   "tokens": 87,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_2",
+   "domain": "code",
+   "text": "```python\ndef code_12_sealed_2(left, right):\n    # Initialize pointers to the start of both lists\n    left_idx = 0\n    right_idx = 0\n    \n    # Initialize a list to store the result\n    result = []\n    \n    # Alternate items from left, then append whatever remains of the longer list\n    while left_idx < len(left) or right_idx < len(right):\n        if left_idx < len(left):\n            result.append(left[left_idx])\n            left_idx += 1\n        elif right_idx < len(right):\n            result.append(right[right_idx])\n            right_idx += 1\n        else:\n            # If both lists are exhausted, append the remaining items from the longer list\n            if len(left) >= len(right):\n                result.extend(left[left_idx:])\n            else:\n                result.extend(right[right_idx:])\n    \n    return result\n```",
+   "tokens": 196,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_2",
+   "domain": "debug",
+   "text": "```python\ndef debug_12_sealed_2(numbers):\n    return sum(1 for n in numbers if n % 2 == 0)\n```",
+   "tokens": 36,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_2",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-maple-4\"\n  }\n}\n</think>\n\n{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-maple-4\"\n  }\n}",
+   "tokens": 72,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_2",
+   "domain": "instruction",
+   "text": "MAPLE",
+   "tokens": 3,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_2",
+   "domain": "reasoning",
+   "text": "To find the remaining amount, we first calculate the total amount drained:\n$7 \\text{ litres/hour} \\times 7 \\text{ hours} = 49 \\text{ litres}$.\n\nNow, subtract the drained amount from the initial amount:\n$53 \\text{ litres} - 49 \\text{ litres} = 4 \\text{ litres}$.\n\nAnswer: 4",
+   "tokens": 88,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_2",
+   "domain": "code",
+   "text": "```python\ndef code_13_sealed_2(text):\n    if len(text) <= 8:\n        return 'm' + text\n    else:\n        return text\n```",
+   "tokens": 43,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_2",
+   "domain": "debug",
+   "text": "```python\ndef debug_13_sealed_2(text):\n    return text.strip()\n```",
+   "tokens": 23,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_13_sealed_2",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"maple\",\n    \"days_ahead\": 4\n  }\n}\n</think>\n\n{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"maple\",\n    \"days_ahead\": 4\n  }\n}",
+   "tokens": 84,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_2",
+   "domain": "instruction",
+   "text": "maple maple maple\n\nmaple maple maple",
+   "tokens": 10,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_2",
+   "domain": "reasoning",
+   "text": "To find the number of crates needed, we divide the total number of jars by the number of jars per crate:\n$50 \\text{ jars} \\div 7 \\text{ jars/crate} = 7.14...$\n\nSince you cannot have a fraction of a crate, you must round up to the next whole number.\n$8 \\text{ crates}$ are needed.\n\nAnswer: 8",
+   "tokens": 89,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_3",
+   "domain": "code",
+   "text": "```python\ndef code_12_sealed_3(left, right):\n    # Initialize pointers to the start of both lists\n    left_idx = 0\n    right_idx = 0\n    \n    # Initialize a list to store the result\n    result = []\n    \n    # Alternate items from left, then append whatever remains of the longer list\n    while left_idx < len(left) or right_idx < len(right):\n        if left_idx < len(left):\n            result.append(left[left_idx])\n            left_idx += 1\n        elif right_idx < len(right):\n            result.append(right[right_idx])\n            right_idx += 1\n        else:\n            # If both lists are exhausted, append the remaining items from the longer list\n            if len(left) >= len(right):\n                result.extend(left[left_idx:])\n            else:\n                result.extend(right[right_idx:])\n    \n    return result\n```",
+   "tokens": 196,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_3",
+   "domain": "debug",
+   "text": "```python\ndef debug_12_sealed_3(numbers):\n    return sum(1 for n in numbers if n % 2 == 0)\n```",
+   "tokens": 36,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_3",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-copper-5\"\n  }\n}\n</think>\n\n{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-copper-5\"\n  }\n}",
+   "tokens": 72,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_3",
+   "domain": "instruction",
+   "text": "COPPER",
+   "tokens": 4,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_3",
+   "domain": "reasoning",
+   "text": "To find the remaining amount, we first calculate the total amount drained:\n$8 \\text{ litres/hour} \\times 8 \\text{ hours} = 64 \\text{ litres}$.\n\nNow, subtract the drained amount from the initial amount:\n$69 \\text{ litres} - 64 \\text{ litres} = 5 \\text{ litres}$.\n\nAnswer: 5",
+   "tokens": 88,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_3",
+   "domain": "code",
+   "text": "```python\ndef code_13_sealed_3(text):\n    if len(text) <= 9:\n        return 'c' + text\n    else:\n        return text\n```",
+   "tokens": 43,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_3",
+   "domain": "debug",
+   "text": "```python\ndef debug_13_sealed_3(text):\n    return text.strip()\n```",
+   "tokens": 23,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_13_sealed_3",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"copper\",\n    \"days_ahead\": 5\n  }\n}\n</think>\n\n{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"copper\",\n    \"days_ahead\": 5\n  }\n}",
+   "tokens": 84,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_3",
+   "domain": "instruction",
+   "text": "copper copper copper\n\ncopper copper copper",
+   "tokens": 10,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_3",
+   "domain": "reasoning",
+   "text": "To find the number of crates needed, we divide the total number of jars by the number of jars per crate:\n$65 \\text{ jars} \\div 8 \\text{ jars/crate} = 8.125 \\text{ crates}$.\n\nSince we cannot have a fraction of a crate, we must round up to the nearest whole number.\n$9 \\text{ crates}$ are needed.\n\nAnswer: 9",
+   "tokens": 94,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_4",
+   "domain": "code",
+   "text": "```python\ndef code_12_sealed_4(left, right):\n    # Initialize pointers to the start of both lists\n    left_idx = 0\n    right_idx = 0\n    \n    # Initialize a list to store the result\n    result = []\n    \n    # Alternate items from left, then append whatever remains of the longer list\n    while left_idx < len(left) or right_idx < len(right):\n        if left_idx < len(left):\n            result.append(left[left_idx])\n            left_idx += 1\n        elif right_idx < len(right):\n            result.append(right[right_idx])\n            right_idx += 1\n        else:\n            # If both lists are exhausted, append the remaining items from the longer list\n            if len(left) >= len(right):\n                result.extend(left[left_idx:])\n            else:\n                result.extend(right[right_idx:])\n    \n    return result\n```",
+   "tokens": 196,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_4",
+   "domain": "debug",
+   "text": "```python\ndef debug_12_sealed_4(numbers):\n    return sum(1 for n in numbers if n % 2 == 0)\n```",
+   "tokens": 36,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_4",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-violet-6\"\n  }\n}\n</think>\n\n{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-violet-6\"\n  }\n}",
+   "tokens": 72,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_4",
+   "domain": "instruction",
+   "text": "VIOLET",
+   "tokens": 4,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_4",
+   "domain": "reasoning",
+   "text": "To find the remaining amount, we first calculate the total amount drained:\n$9 \\text{ litres/hour} \\times 9 \\text{ hours} = 81 \\text{ litres}$.\n\nNow, subtract the drained amount from the initial amount:\n$87 \\text{ litres} - 81 \\text{ litres} = 6 \\text{ litres}$.\n\nAnswer: 6",
+   "tokens": 88,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_4",
+   "domain": "code",
+   "text": "```python\ndef code_13_sealed_4(text):\n    if len(text) <= 10:\n        return 'v' + text\n    else:\n        return text\n```",
+   "tokens": 44,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_4",
+   "domain": "debug",
+   "text": "```python\ndef debug_13_sealed_4(text):\n    return text.strip()\n```",
+   "tokens": 23,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_13_sealed_4",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"violet\",\n    \"days_ahead\": 6\n  }\n}\n</think>\n\n{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"violet\",\n    \"days_ahead\": 6\n  }\n}",
+   "tokens": 84,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_4",
+   "domain": "instruction",
+   "text": "violet violet violet\n\nviolet violet violet",
+   "tokens": 10,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_4",
+   "domain": "reasoning",
+   "text": "To find the number of crates needed, we divide the total number of jars by the number of jars per crate:\n$82 \\div 9 = 9$ with a remainder of $1$.\n\nSince there is a remainder, we need one additional crate to complete the 82 jars.\n$9 + 1 = 10$ crates.\n\nAnswer: 10",
+   "tokens": 82,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_5",
+   "domain": "code",
+   "text": "```python\ndef code_12_sealed_5(left, right):\n    # Initialize pointers to the start of both lists\n    left_idx = 0\n    right_idx = 0\n    \n    # Initialize a list to store the result\n    result = []\n    \n    # Alternate items from left, then append whatever remains of the longer list\n    while left_idx < len(left) or right_idx < len(right):\n        if left_idx < len(left):\n            result.append(left[left_idx])\n            left_idx += 1\n        elif right_idx < len(right):\n            result.append(right[right_idx])\n            right_idx += 1\n        else:\n            # If both lists are exhausted, append the remaining items from the longer list\n            if len(left) >= len(right):\n                result.extend(left[left_idx:])\n            else:\n                result.extend(right[right_idx:])\n    \n    return result\n```",
+   "tokens": 196,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_5",
+   "domain": "debug",
+   "text": "```python\ndef debug_12_sealed_5(numbers):\n    return sum(1 for n in numbers if n % 2 == 0)\n```",
+   "tokens": 36,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_5",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-harbor-7\"\n  }\n}\n</think>\n\n{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-harbor-7\"\n  }\n}",
+   "tokens": 74,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_5",
+   "domain": "instruction",
+   "text": "HARBOR",
+   "tokens": 4,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_5",
+   "domain": "reasoning",
+   "text": "To find the remaining amount, we calculate the total amount drained and subtract it from the initial amount.\n\n1.  **Calculate total drained:** $3 \\text{ litres/hour} \\times 10 \\text{ hours} = 30 \\text{ litres}$.\n2.  **Calculate remaining:** $37 \\text{ litres} - 30 \\text{ litres} = 7 \\text{ litres}$.\n\nAnswer: 7",
+   "tokens": 98,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_5",
+   "domain": "code",
+   "text": "```python\ndef code_13_sealed_5(text):\n    if len(text) <= 11:\n        return 'h' + text\n    else:\n        return text\n```",
+   "tokens": 44,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_5",
+   "domain": "debug",
+   "text": "```python\ndef debug_13_sealed_5(text):\n    return text.strip()\n```",
+   "tokens": 23,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_13_sealed_5",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"harbor\",\n    \"days_ahead\": 7\n  }\n}\n</think>\n\n{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"harbor\",\n    \"days_ahead\": 7\n  }\n}",
+   "tokens": 84,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_5",
+   "domain": "instruction",
+   "text": "harbor harbor harbor",
+   "tokens": 5,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_5",
+   "domain": "reasoning",
+   "text": "To find the number of crates needed, we divide the total number of jars by the number of jars per crate:\n$31 \\text{ jars} \\div 3 \\text{ jars/crate} = 10.333...$\n\nSince we cannot have a fraction of a crate, we must round up to the next whole number.\n$11$ crates are needed.\n\nAnswer: 11",
+   "tokens": 90,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_6",
+   "domain": "code",
+   "text": "```python\ndef code_12_sealed_6(left, right):\n    # Initialize pointers to the start of both lists\n    left_idx = 0\n    right_idx = 0\n    \n    # Initialize a list to store the result\n    result = []\n    \n    # Alternate items from left, then append whatever remains of the longer list\n    while left_idx < len(left) or right_idx < len(right):\n        if left_idx < len(left):\n            result.append(left[left_idx])\n            left_idx += 1\n        elif right_idx < len(right):\n            result.append(right[right_idx])\n            right_idx += 1\n        else:\n            # If both lists are exhausted, append the remaining items from the longer list\n            if len(left) >= len(right):\n                result.extend(left[left_idx:])\n            else:\n                result.extend(right[right_idx:])\n    \n    return result\n```",
+   "tokens": 196,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_6",
+   "domain": "debug",
+   "text": "```python\ndef debug_12_sealed_6(numbers):\n    return sum(1 for n in numbers if n % 2 == 0)\n```",
+   "tokens": 36,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_6",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-silver-8\"\n  }\n}\n</think>\n\n{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-silver-8\"\n  }\n}",
+   "tokens": 72,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_6",
+   "domain": "instruction",
+   "text": "SILVER",
+   "tokens": 4,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_6",
+   "domain": "reasoning",
+   "text": "To find the remaining amount, we first calculate the total amount drained:\n$4 \\text{ litres/hour} \\times 11 \\text{ hours} = 44 \\text{ litres}$.\n\nNow, subtract the drained amount from the initial amount:\n$52 \\text{ litres} - 44 \\text{ litres} = 8 \\text{ litres}$.\n\nAnswer: 8",
+   "tokens": 89,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_6",
+   "domain": "code",
+   "text": "```python\ndef code_13_sealed_6(text):\n    if len(text) <= 12:\n        return 's' + text\n    else:\n        return text\n```",
+   "tokens": 44,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_6",
+   "domain": "debug",
+   "text": "```python\ndef debug_13_sealed_6(text):\n    return text.strip()\n```",
+   "tokens": 23,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_13_sealed_6",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"silver\",\n    \"days_ahead\": 8\n  }\n}\n</think>\n\n{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"silver\",\n    \"days_ahead\": 8\n  }\n}",
+   "tokens": 82,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_6",
+   "domain": "instruction",
+   "text": "SilverSilverSilver\n\n(Note: This is a text-based output. In a real-world scenario, you would print this using code or a terminal command.)",
+   "tokens": 31,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_6",
+   "domain": "reasoning",
+   "text": "To find the number of crates needed, we divide the total number of jars by the number of jars per crate:\n$45 \\text{ jars} \\div 4 \\text{ jars/crate} = 11.25$\n\nSince we cannot have a fraction of a crate, we must round up to the nearest whole number.\n$11.25 \\rightarrow 12$ crates.\n\nAnswer: 12",
+   "tokens": 94,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_12_sealed_7",
+   "domain": "code",
+   "text": "```python\ndef code_12_sealed_7(left, right):\n    # Initialize pointers to the start of both lists\n    left_idx = 0\n    right_idx = 0\n    \n    # Initialize a list to store the result\n    result = []\n    \n    # Alternate items from left, then append whatever remains of the longer list\n    while left_idx < len(left) or right_idx < len(right):\n        if left_idx < len(left):\n            result.append(left[left_idx])\n            left_idx += 1\n        elif right_idx < len(right):\n            result.append(right[right_idx])\n            right_idx += 1\n        else:\n            # If both lists are exhausted, append the remaining items from the longer list\n            if len(left) >= len(right):\n                result.extend(left[left_idx:])\n            else:\n                result.extend(right[right_idx:])\n    \n    return result\n```",
+   "tokens": 196,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_12_sealed_7",
+   "domain": "debug",
+   "text": "```python\ndef debug_12_sealed_7(numbers):\n    return sum(1 for n in numbers if n % 2 == 0)\n```",
+   "tokens": 36,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_12_sealed_7",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-coral-9\"\n  }\n}\n</think>\n\n{\n  \"name\": \"cancel_booking\",\n  \"arguments\": {\n    \"booking_id\": \"bk-coral-9\"\n  }\n}",
+   "tokens": 72,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_12_sealed_7",
+   "domain": "instruction",
+   "text": "CORAL",
+   "tokens": 3,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_12_sealed_7",
+   "domain": "reasoning",
+   "text": "To find the remaining amount, we first calculate the total amount drained:\n$5 \\text{ litres/hour} \\times 12 \\text{ hours} = 60 \\text{ litres}$.\n\nNow, subtract the drained amount from the initial amount:\n$69 \\text{ litres} - 60 \\text{ litres} = 9 \\text{ litres}$.\n\nAnswer: 9",
+   "tokens": 89,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  },
+  {
+   "id": "code_13_sealed_7",
+   "domain": "code",
+   "text": "```python\ndef code_13_sealed_7(text):\n    if len(text) <= 13:\n        return 'c' + text\n    else:\n        return text\n```",
+   "tokens": 44,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "debug_13_sealed_7",
+   "domain": "debug",
+   "text": "```python\ndef debug_13_sealed_7(text):\n    return text.strip()\n```",
+   "tokens": 23,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "Python syntax/function/return check"
+  },
+  {
+   "id": "tool_13_sealed_7",
+   "domain": "tool",
+   "text": "{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"coral\",\n    \"days_ahead\": 9\n  }\n}\n</think>\n\n{\n  \"name\": \"query_tide\",\n  \"arguments\": {\n    \"port\": \"coral\",\n    \"days_ahead\": 9\n  }\n}",
+   "tokens": 84,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": false,
+   "check_reason": "response parse failure"
+  },
+  {
+   "id": "instruction_13_sealed_7",
+   "domain": "instruction",
+   "text": "coral coral coral",
+   "tokens": 5,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "exact instruction check"
+  },
+  {
+   "id": "reasoning_13_sealed_7",
+   "domain": "reasoning",
+   "text": "To find the number of crates needed, we divide the total number of jars by the number of jars per crate:\n$61 \\text{ jars} \\div 5 \\text{ jars/crate} = 12.2$\n\nSince we cannot have a fraction of a crate, we must round up to the nearest whole number.\n$12.2 \\rightarrow 13$ crates.\n\nAnswer: 13",
+   "tokens": 92,
+   "ended_at_eos": true,
+   "repetition_failure_stop": false,
+   "declared_check_pass": true,
+   "check_reason": "arithmetic final-value check"
+  }
+ ],
+ "generation_summary": {
+  "declared_pass": 59,
+  "n": 80,
+  "eos": 80,
+  "loops": 0,
+  "by_domain": {
+   "code": {
+    "pass": 16,
+    "n": 16
+   },
+   "debug": {
+    "pass": 16,
+    "n": 16
+   },
+   "tool": {
+    "pass": 0,
+    "n": 16
+   },
+   "instruction": {
+    "pass": 11,
+    "n": 16
+   },
+   "reasoning": {
+    "pass": 16,
+    "n": 16
+   }
+  }
+ },
+ "seconds": 600.1264240409946,
+ "gpu_peak_allocated": 7845389824
+}

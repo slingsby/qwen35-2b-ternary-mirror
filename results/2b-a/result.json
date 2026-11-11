@@ -1,0 +1,15 @@
+{
+ "step": 1000,
+ "best_combined_kl": 0.5125429091854188,
+ "stopped_by": "complete",
+ "codes": {
+  "changed": 3786957,
+  "zero_to_nonzero": 3786957,
+  "nonzero_to_zero": 0,
+  "sign_flip": 0,
+  "total": 1880096768
+ },
+ "seconds": 7032.813223987934,
+ "gpu_peak_allocated": 21760174592,
+ "gpu_peak_reserved": 24685576192
+}
